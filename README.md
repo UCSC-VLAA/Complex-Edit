@@ -1,6 +1,6 @@
 # Complex-Edit: CoT-Like Instruction Generation for Complexity-Controllable Image Editing Benchmark
 
-![Method Pipeline](./complexedit_teaser.png)
+![Method Pipeline](./imgs/complexedit_teaser.png)
 
 
 We introduce Complex-Edit, a comprehensive benchmark designed to systematically evaluate instruction-based image editing models across instructions of varying complexity. To develop this benchmark, we harness GPT-4o to automatically collect a diverse set of editing instructions at scale.
@@ -25,7 +25,14 @@ Our benchmark yields several notable insights:
 ---
 
 ## **Dataset Generation**
-- Stay Tuned! We will release it soon!
+```bash
+python build_dataset/generate_edits.py -p <path_to_input_image_dir> -o <path_to_output_dir> --max-complexity 8
+```
+
+## **Evaluation**
+```bash
+python eval.py --image-type <real_or_syn> -p <path_to_output_image_dir> -c <complexity> --resume --num-processes 16
+```
 
 ---
 ## Acknowledgement
